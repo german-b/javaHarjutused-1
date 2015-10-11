@@ -3,6 +3,8 @@ package teema1;
 import java.util.Arrays;
 import java.util.Scanner;
 
+import java.util.Random;
+
 /**
  * NB! Lahenda käesolev ülesanne konsoolis. Pole vaja JavaFXi siia segada.
  *
@@ -17,4 +19,72 @@ import java.util.Scanner;
  */
 public class Peamurdja3_laevad {
 
+    public static void main(String[] args) {
+
+ /*1-dimensiooniline laud
+
+   int[] laud = new int[10];
+    Random randomGenerator = new Random();
+
+        for (int i = 0; i < 10; i++ ) {
+            int randomInt = randomGenerator.nextInt(2);
+            System.out.println(randomInt);
+
+            laud[i] = randomInt;
+        }
+
+        Scanner sisend = new Scanner(System.in);
+        System.out.println("Tulista:");
+        int sisend1 = sisend.nextInt();
+
+        if (laud[sisend1-1] == 1){
+            System.out.println("Pihtas!");
+
+        } else System.out.println("M88da!");
+    TODO: lisada mitu käiku
+
+*/
+
+        //2-dimensiooniline laud (ruudustik)
+
+       int[][] laud2  = new int[4][4];
+       int n = 4; //laevade arv
+
+
+       Random randomGenerator = new Random();
+       while (n > 0) {
+           for (int i = 0; i < 4; i++) {
+
+               for (int a = 0; a < 4; a++) {
+                   if (laud2[i][a] == 1)
+                       break;
+
+                   int randomInt = randomGenerator.nextInt(2);
+                   laud2[i][a] = randomInt;
+
+                   if (randomInt == 1){
+
+                       n--;
+                   }
+
+                   System.out.print(laud2[i][a]);
+
+               }
+               System.out.println(n);
+           }
+       }
+    Scanner sisend = new Scanner(System.in);
+        System.out.println("Sisend:");
+        String sisend2 = sisend.next();
+
+        int i1 = Character.getNumericValue(sisend2.charAt(0)) -1;
+        int i2 = Character.getNumericValue(sisend2.charAt(1)) -1;
+
+        if (laud2[i1][i2] == 1){
+
+            System.out.println("Pihtas!");
+
+        }else System.out.println("M88da!");
+
+    }
 }
