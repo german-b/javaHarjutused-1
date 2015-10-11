@@ -47,44 +47,56 @@ public class Peamurdja3_laevad {
 
         //2-dimensiooniline laud (ruudustik)
 
-       int[][] laud2  = new int[4][4];
-       int n = 4; //laevade arv
+        int[][] laud2 = new int[4][4];
+        int n = 4; //algsete laevade arv
+        int m = 4; //arvamata laevade arv
 
+        Random randomGenerator = new Random();
+        while (n > 0) {
+            for (int i = 0; i < 4; i++) {
+                for (int a = 0; a < 4; a++) {
+                    int randomInt = randomGenerator.nextInt(2);
+                    laud2[i][a] = randomInt;
+                    if (randomInt == 1) {
+                        n--;
+                        break;
+                    }
+                }
+            }
+        }
+        // Prindib tegeliku laua koos laevadega
+        for (int i = 0; i < 4; i++) {
 
-       Random randomGenerator = new Random();
-       while (n > 0) {
-           for (int i = 0; i < 4; i++) {
+            for (int a = 0; a < 4; a++) {
+                System.out.print(laud2[i][a]);
+            }
+            System.out.println();
+        }
+        while (m > 0) {
+            Scanner sisend = new Scanner(System.in);
+            System.out.println("Sisend:");
+            String sisend2 = sisend.next();
 
-               for (int a = 0; a < 4; a++) {
-                   if (laud2[i][a] == 1)
-                       break;
+            int i1 = Character.getNumericValue(sisend2.charAt(0)) - 1;
+            int i2 = Character.getNumericValue(sisend2.charAt(1)) - 1;
 
-                   int randomInt = randomGenerator.nextInt(2);
-                   laud2[i][a] = randomInt;
+            if (laud2[i1][i2] == 1) {
+                laud2[i1][i2] = 2;
+                m--;
+                System.out.println("Pihtas!");
 
-                   if (randomInt == 1){
+            } else if (laud2[i1][i2] == 0) {
 
-                       n--;
-                   }
+                System.out.println("M88da!");
+            } else {
+                System.out.println("Lase surnutel rahus puhata.");
+            }
 
-                   System.out.print(laud2[i][a]);
+            if (m == 0) {
 
-               }
-               System.out.println(n);
-           }
-       }
-    Scanner sisend = new Scanner(System.in);
-        System.out.println("Sisend:");
-        String sisend2 = sisend.next();
+                System.out.println("Mäng läbi, sinu võit!");
 
-        int i1 = Character.getNumericValue(sisend2.charAt(0)) -1;
-        int i2 = Character.getNumericValue(sisend2.charAt(1)) -1;
-
-        if (laud2[i1][i2] == 1){
-
-            System.out.println("Pihtas!");
-
-        }else System.out.println("M88da!");
-
+            }
+        }
     }
 }
