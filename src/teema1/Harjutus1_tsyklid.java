@@ -18,6 +18,27 @@ package teema1;
  */
 public class Harjutus1_tsyklid {
     public static void main(String[] args) {
+/*  1. ülesanne
+      for (int i = 10; i > 0; i++){
+            System.out.println(i + " ");
+        }*/
+    /*2. ülesanne
+      for (int i = 0; i < 11; i++){
+          if (i % 2 == 1) {
+              System.out.println(i);
+          }
+        }*/
+    // 3. ülesanne
+        for (int i = 0; i < 10; i++) {
+            for (int a = 0; a < 10; a++) {
+                int n = i + a;
+                    if (n >= 10) {
+                        n = n - 10;
+                    }
+                    System.out.print(n + " ");
+            }
+            System.out.println();
+            }
 
-    }
+        }
 }
