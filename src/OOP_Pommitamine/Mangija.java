@@ -20,6 +20,7 @@ public class Mangija {
 
     public void pihtas() {
         System.out.println("Pimm-põmm Pihtas!");
+
     }
 
     public void moodas() {
