@@ -18,4 +18,5 @@ import javafx.stage.Stage;
  * 4. Õnnestunud katse puhul vaheta pilt uue vastu (kasvõi roheline ring), .
  */
 public class Harjutus3_logisisse {
+
 }
