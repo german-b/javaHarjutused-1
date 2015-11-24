@@ -127,7 +127,7 @@ public class Andmebaas {
 
         try {
             Statement stat = conn.createStatement();
-            // Andmete uuendamise käsi on UPDATE. SET ütleb, et nüüd tulevad need uued andmed sisse. WHERE ütleb mis ridu uuendada.
+            // Andmete uuendamise käsk on UPDATE. SET ütleb, et nüüd tulevad need uued andmed sisse. WHERE ütleb mis ridu uuendada.
             String sql = String.format("UPDATE USERS SET USERNAME = '%s', PASSWORD = '%s', FULLNAME = '%s', NUMBER = '%s', ADDRESS = '%s' WHERE USERNAME = '%s';", username, password, fullname, number, address, username);
             stat.executeUpdate(sql);
             stat.close();
